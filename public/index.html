@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui@2.13.0/lib/index.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
-        <sp-codelist></sp-codelist>
+        <div>{{sex}}</div>
+        <sp-codelist v-model="sex" :value="sex" :data="sexList"></sp-codelist>
     </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="../dist/sp-ui.js"></script>
 <script>
     new Vue({
-        el: '#app'
+        el: '#app',
+        data: {
+            sexList: [{
+                'code': 'man',
+                'name': '男'
+            }, {
+                'code': 'woman',
+                'name': '女'
+            }],
+            sex: 'man'
+        }
     })
 </script>
+
 </html>
